@@ -3,6 +3,7 @@ body {
     padding: 0;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--dark-blue);
@@ -10,6 +11,12 @@ body {
 
 .information {
     display: none;
+}
+
+header {
+    position: absolute;
+    top: 5%;
+    color: var(--dark-cyan);
 }
 
 .catch-citie {
@@ -67,6 +74,7 @@ body {
     --light: #DAFDBA;
     --light-green: #9AEBA3;
     --cyan: #45C4B0;
+    --dark-cyan: #248173;
     --mid-blue: #145875;
     --light-blue: #13678A;
     --dark-blue: #012030;
