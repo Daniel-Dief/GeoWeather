@@ -1,9 +1,9 @@
 const form = document.querySelector('.catch-citie form');
 const input = document.querySelector('#citie_input');
 
+var json_temp;
+
 const citie_info = {
-    cod: "",
-    message: "",
     name: "",
     lat: "",
     lon: "",
@@ -36,12 +36,31 @@ const country_info = {
 }
 
 async function request_citie(citie_name) {
-    json = (await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citie_name}&appid=281ae3f9df1c5146067af84cfbd932a5`, { method: "POST" })
-        .then(response => response.json())
-    );
-    if (json.cod == 200) {
-        citie_info.cod = json.cod;
-        citie_info.message = "";
+    json = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citie_name}&appid=281ae3f9df1c5146067af84cfbd932a5`)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                citie_info.name = null;
+                citie_info.lat = null;
+                citie_info.lon = null;
+                citie_info.weather = null;
+                citie_info.description = null;
+                citie_info.icon = null;
+                citie_info.country = null;
+                citie_info.temp = null;
+                citie_info.temp_min = null;
+                citie_info.temp_max = null;
+                citie_info.pressure = null;
+                citie_info.humidity = null;
+                citie_info.wind = null;
+                citie_info.clouds = null;
+
+                alert("Cidade não encontrada");
+                return null;
+            }
+        });
+    if (json != null) {
         citie_info.name = json.name;
         citie_info.lat = json.coord.lat;
         citie_info.lon = json.coord.lon;
@@ -56,24 +75,7 @@ async function request_citie(citie_name) {
         citie_info.wind = json.wind.speed;
         citie_info.clouds = json.clouds.all;
         citie_info.country = json.sys.country;
-    } else {
-        citie_info.cod = json.cod;
-        citie_info.message = json.message;
-        citie_info.name = null;
-        citie_info.lat = null;
-        citie_info.lon = null;
-        citie_info.weather = null;
-        citie_info.description = null;
-        citie_info.icon = null;
-        citie_info.temp = null;
-        citie_info.temp_min = null;
-        citie_info.temp_max = null;
-        citie_info.pressure = null;
-        citie_info.humidity = null;
-        citie_info.wind = null;
-        citie_info.clouds = null;
     }
-
 }
 
 async function request_country(country_code) {
@@ -99,9 +101,25 @@ async function request_country(country_code) {
     }
 }
 
+async function request_data_base(input) {
+    let env_form = new FormData();
+    env_form.append('citie', input);
+
+    const data = await fetch('./php/request.php', {
+        method: 'POST',
+        body: env_form
+    }).then(response => {
+        json_temp = response.json();
+    });
+}
+
 async function request(citie_name) {
     await request_citie(citie_name);
-    await request_country(citie_info.country);
+    if(json != null){
+        await request_country(citie_info.country);
+    } else {
+        await request_data_base(input.value);
+    }
 }
 
 form.addEventListener("submit", (event) => {
