@@ -1,3 +1,73 @@
 body {
-    font-family: "Teko", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-blue);
+}
+
+.information {
+    display: none;
+}
+
+.catch-citie {
+    display: flex;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 2rem var(--black);
+    background-image: linear-gradient(to right top, var(--light-blue), var(--dark-blue));
+}
+
+
+.catch-citie form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.catch-citie label {
+    border-radius: 1rem;
+    border: 1px solid var(--light-blue);
+    color: var(--white);
+    font-size: .9rem;
+    padding: .5rem;
+}
+
+.catch-citie form input[type="text"] {
+    margin: 2rem;
+    width: 95%;
+    height: 2rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius: .5rem;
+    background-color: var(--mid-blue);
+    border: 1px solid var(--mid-blue);
+    color: var(--white);
+}
+
+.catch-citie form input[type="text"]:focus {
+    outline: none;
+}
+
+.catch-citie form input[type="submit"] {
+    border-radius: .5rem;
+    padding: .5rem;
+    border: 1px solid var(--dark-blue);
+    background-color: var(--dark-blue);
+    color: var(--white);
+    cursor: pointer;
+}
+
+:root {
+    --white: #FFFFFF;
+    --black: #000000;
+    --light: #DAFDBA;
+    --light-green: #9AEBA3;
+    --cyan: #45C4B0;
+    --mid-blue: #145875;
+    --light-blue: #13678A;
+    --dark-blue: #012030;
 }
