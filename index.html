@@ -22,31 +22,34 @@
     </div>
     <div class="information">
         <div class="citie_info">
-            nome
-            latitude
-            longitude
-            clima
-            temperatura
-            temperatura min
-            temperatura max
-            precao
-            humidade
-            vento
+            nome - name
+            latitude - cord.lat
+            longitude - cord.lon
+            clima - weather.main
+            descrição - weather.description
+            icone - weather.icon
+            temperatura - main.temp
+            temperatura min - main.temp_min
+            temperatura max - main.temp_max
+            precao - main.pressure
+            humidade - main.humidity
+            vento - wind.speed
+            nuvens - clouds.all
         </div>
         <div class="country_info">
-            nome do pais + sigla
-            nome official
-            moeda
-            capital
-            regiao
-            lingua
-            latitude
-            longitude
-            fronteiras
-            area
-            populacao
-            timezone
-            bandeira
+            nome do pais - name.common
+            sigla - cca2
+            nome official - name.official
+            moeda - currencies.???
+            capital - capital
+            regiao - region
+            lingua - languages.???
+            latitude - latlng[0]
+            longitude - latlng[1]
+            fronteiras - borders
+            area - area
+            populacao - population
+            bandeira - flags.png
         </div>
         <div class="citie_map"></div>
     </div>
