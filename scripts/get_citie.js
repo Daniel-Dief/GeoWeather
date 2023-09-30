@@ -1,8 +1,6 @@
 const form = document.querySelector('.catch-citie form');
 const input = document.querySelector('#citie_input');
 
-var json_temp;
-
 const citie_info = {
     name: "",
     lat: "",
@@ -78,9 +76,14 @@ async function request_citie(citie_name) {
     }
 }
 
-async function request_country(country_code) {
-    json = await fetch(`https://restcountries.com/v3.1/alpha/${country_code}`)
+async function request_country(country_search, code) {
+    if(code){
+        json = await fetch(`https://restcountries.com/v3.1/alpha/${country_search}`)
         .then(response => response.json());
+    } else {
+        json = await fetch(`https://restcountries.com/v3.1/name/${country_search}`)
+        .then(response => response.json());
+    }
     if (json.status != 404) {
         country_info.name = json[0].altSpellings[1];
         country_info.cca2 = json[0].altSpellings[0];
@@ -108,17 +111,19 @@ async function request_data_base(input) {
     const data = await fetch('./php/request.php', {
         method: 'POST',
         body: env_form
-    }).then(response => {
-        json_temp = response.json();
-    });
+    }).then(response => response.json());
+
+    country_info.name = data[0].country;
 }
 
 async function request(citie_name) {
     await request_citie(citie_name);
     if(json != null){
-        await request_country(citie_info.country);
+        await request_country(citie_info.country, true);
     } else {
-        await request_data_base(input.value);
+        await request_data_base(input.value)
+        await request_country(country_info.name, false);
+        await request_citie(country_info.capital);
     }
 }
 
