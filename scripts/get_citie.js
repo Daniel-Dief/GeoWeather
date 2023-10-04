@@ -7,7 +7,6 @@ const citie_info = {
     name: "",
     lat: "",
     lon: "",
-    weather: "",
     description: "",
     icon: "",
     temp: "",
@@ -36,7 +35,7 @@ const country_info = {
 }
 
 async function request_citie(citie_name) {
-    json = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citie_name}&appid=281ae3f9df1c5146067af84cfbd932a5`)
+    json = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citie_name}&appid=281ae3f9df1c5146067af84cfbd932a5&lang=pt_br`)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -44,7 +43,6 @@ async function request_citie(citie_name) {
                 citie_info.name = null;
                 citie_info.lat = null;
                 citie_info.lon = null;
-                citie_info.weather = null;
                 citie_info.description = null;
                 citie_info.icon = null;
                 citie_info.country = null;
@@ -64,7 +62,6 @@ async function request_citie(citie_name) {
         citie_info.name = json.name;
         citie_info.lat = json.coord.lat;
         citie_info.lon = json.coord.lon;
-        citie_info.weather = json.weather[0].main;
         citie_info.description = json.weather[0].description;
         citie_info.icon = json.weather[0].icon;
         citie_info.temp = json.main.temp;
@@ -137,19 +134,34 @@ function transition(){
     document.querySelector('.information').style.display = "flex";
 
     /*citie_info*/
-    document.querySelector('.nome').innerHTML = citie_info.name;
-    document.querySelector('.icon').src += citie_info.icon + ".png";
-    document.querySelector('.clima').innerHTML = citie_info.weather;
-    document.querySelector('.descrição').innerHTML = citie_info.description;
-    document.querySelector('.nuvens').innerHTML = "Nuvens: " + citie_info.clouds + "%";
-    document.querySelector('.latitude').innerHTML = citie_info.lat;
-    document.querySelector('.longitude').innerHTML = citie_info.lon;
-    document.querySelector('.temp').innerHTML = citie_info.temp - 273.15;
-    document.querySelector('.temp_max').innerHTML = citie_info.temp_max - 273.15;
-    document.querySelector('.temp_min').innerHTML = citie_info.temp_min - 273.15;
-    document.querySelector('.precao').innerHTML = citie_info.pressure;
-    document.querySelector('.humidade').innerHTML = citie_info.humidity;
-    document.querySelector('.vento').innerHTML = "Vento: " + citie_info.wind + "m/s";
+    document.querySelector('.citie_info .nome').innerHTML = citie_info.name;
+    document.querySelector('.citie_info .icon').src += citie_info.icon + "@2x.png";
+    document.querySelector('.citie_info .clima').innerHTML = "Clima: " + citie_info.description;
+    document.querySelector('.citie_info .nuvens').innerHTML = "Nuvens: " + citie_info.clouds + "%";
+    document.querySelector('.citie_info .latitude').innerHTML = "Latitude: " + citie_info.lat;
+    document.querySelector('.citie_info .longitude').innerHTML = "Longitude: " + citie_info.lon;
+    document.querySelector('.citie_info .temp').innerHTML = "Temperatura: " + parseFloat((citie_info.temp - 273.15).toFixed(2));
+    document.querySelector('.citie_info .temp_max').innerHTML = "Temperatura Máxima: " + parseFloat((citie_info.temp_max - 273.15).toFixed(2));
+    document.querySelector('.citie_info .temp_min').innerHTML = "Temperatura Mínima: " + parseFloat((citie_info.temp_min - 273.15).toFixed(2));
+    document.querySelector('.citie_info .precao').innerHTML = "Pressão: " + citie_info.pressure + " hpa";
+    document.querySelector('.citie_info .humidade').innerHTML = "Umidade: " + citie_info.humidity + "%";
+    document.querySelector('.citie_info .vento').innerHTML = "Vento: " + citie_info.wind + "m/s";
+
+    /*country_info*/
+
+    document.querySelector('.country_info .nome').innerHTML = country_info.name;
+    document.querySelector('.country_info .sigla').innerHTML = country_info.cca2; 
+    document.querySelector('.country_info .nome_official').innerHTML = country_info.official_name; 
+    document.querySelector('.country_info .moeda').innerHTML = country_info.currency;
+    document.querySelector('.country_info .capital').innerHTML = country_info.capital;
+    document.querySelector('.country_info .regiao').innerHTML = country_info.region;
+    document.querySelector('.country_info .lingua').innerHTML = country_info.languages;
+    document.querySelector('.country_info .latitude').innerHTML = country_info.lat;
+    document.querySelector('.country_info .longitude').innerHTML = country_info.lon;
+    document.querySelector('.country_info .fronteiras').innerHTML = country_info.borders;
+    document.querySelector('.country_info .area').innerHTML = country_info.area;
+    document.querySelector('.country_info .populacao').innerHTML = country_info.population;
+    document.querySelector('.country_info .bandeira').innerHTML = country_info.flag_link;
 }
 
 form.addEventListener("submit", (event) => {
