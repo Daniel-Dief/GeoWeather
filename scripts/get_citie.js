@@ -1,6 +1,8 @@
 const form = document.querySelector('.catch-citie form');
 const input = document.querySelector('#citie_input');
 
+input.focus();
+
 const citie_info = {
     name: "",
     lat: "",
@@ -125,6 +127,29 @@ async function request(citie_name) {
         await request_country(country_info.name, false);
         await request_citie(country_info.capital);
     }
+    setTimeout(() => {
+        transition();
+    }, 1000);
+}
+
+function transition(){
+    document.querySelector('.catch-citie').style.display = "none";
+    document.querySelector('.information').style.display = "flex";
+
+    /*citie_info*/
+    document.querySelector('.nome').innerHTML = citie_info.name;
+    document.querySelector('.icon').src += citie_info.icon + ".png";
+    document.querySelector('.clima').innerHTML = citie_info.weather;
+    document.querySelector('.descrição').innerHTML = citie_info.description;
+    document.querySelector('.nuvens').innerHTML = "Nuvens: " + citie_info.clouds + "%";
+    document.querySelector('.latitude').innerHTML = citie_info.lat;
+    document.querySelector('.longitude').innerHTML = citie_info.lon;
+    document.querySelector('.temp').innerHTML = citie_info.temp - 273.15;
+    document.querySelector('.temp_max').innerHTML = citie_info.temp_max - 273.15;
+    document.querySelector('.temp_min').innerHTML = citie_info.temp_min - 273.15;
+    document.querySelector('.precao').innerHTML = citie_info.pressure;
+    document.querySelector('.humidade').innerHTML = citie_info.humidity;
+    document.querySelector('.vento').innerHTML = "Vento: " + citie_info.wind + "m/s";
 }
 
 form.addEventListener("submit", (event) => {
