@@ -31,6 +31,7 @@ const country_info = {
     flag_link: "",
     languages: "",
     currency: "",
+    currency_symbol: "",
     borders: ""
 }
 
@@ -95,8 +96,19 @@ async function request_country(country_search, code) {
         country_info.population = json[0].population;
         country_info.flag_link = json[0].flags.png;
         country_info.languages = json[0].languages;
-        country_info.currency = json[0].currencies;
         country_info.borders = json[0].borders;
+
+        /*get currency*/
+        Object.keys(json[0].currencies).forEach(key => {
+            country_info.currency = json[0].currencies[key].name;
+            country_info.currency_symbol = json[0].currencies[key].symbol;
+        });
+
+        /*get languages*/
+        Object.keys(json[0].languages).forEach(key => {
+            country_info.languages = json[0].languages[key];
+        })
+
     } else {
         country_info.status = 404;
         country_info.message = "Country not found";
@@ -153,6 +165,7 @@ function transition(){
     document.querySelector('.country_info .sigla').innerHTML = country_info.cca2; 
     document.querySelector('.country_info .nome_official').innerHTML = country_info.official_name; 
     document.querySelector('.country_info .moeda').innerHTML = country_info.currency;
+    document.querySelector('.country_info .simbolo_moeda').innerHTML = country_info.currency_symbol;
     document.querySelector('.country_info .capital').innerHTML = country_info.capital;
     document.querySelector('.country_info .regiao').innerHTML = country_info.region;
     document.querySelector('.country_info .lingua').innerHTML = country_info.languages;
@@ -161,7 +174,7 @@ function transition(){
     document.querySelector('.country_info .fronteiras').innerHTML = country_info.borders;
     document.querySelector('.country_info .area').innerHTML = country_info.area;
     document.querySelector('.country_info .populacao').innerHTML = country_info.population;
-    document.querySelector('.country_info .bandeira').innerHTML = country_info.flag_link;
+    document.querySelector('.country_info .bandeira').src = country_info.flag_link;
 }
 
 form.addEventListener("submit", (event) => {

@@ -15,12 +15,6 @@ body {
     width: 100vw;
 }
 
-header {
-    position: absolute;
-    top: 5%;
-    color: var(--dark-cyan);
-}
-
 .catch-citie {
     display: flex;
     padding: 3rem 2rem;
