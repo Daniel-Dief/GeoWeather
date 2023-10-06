@@ -146,7 +146,7 @@ function transition(){
 
     /*citie_info*/
     document.querySelector('.citie_info .nome').innerHTML = citie_info.name;
-    document.querySelector('.citie_info .icon').src += citie_info.icon + "@2x.png";
+    document.querySelector('.citie_info .icon').src = "https://openweathermap.org/img/wn/" + citie_info.icon + "@2x.png";
     document.querySelector('.citie_info .clima').innerHTML = "Clima: " + citie_info.description;
     document.querySelector('.citie_info .nuvens').innerHTML = "Nuvens: " + citie_info.clouds + "%";
     document.querySelector('.citie_info .latitude').innerHTML = "Latitude: " + citie_info.lat;
