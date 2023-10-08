@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: 'arial', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     min-height: 100vh; 
     display: flex;
     flex-direction: column;
@@ -74,7 +76,7 @@ body {
 .citie_map {
     width: 100vw; 
     height: 100vh; 
-    padding: 2rem;
+    padding: 0%;
     box-shadow: 0 0 2rem var(--black);
     background-color: var(--black); 
     color: var(--white);
@@ -87,9 +89,37 @@ body {
 }
 
 .citie_info div {
+    font-weight:700;
     display: flex;
     justify-content: center;
     align-items: center;
+
+}
+
+.citie_name_div {
+    font-size: 2rem;
+    border-bottom: 1px solid #000; /* Adicionada uma linha divisória acima do nome da cidade */
+    padding: 0%;
+    max-height: 10%;
+
+}
+
+.citie_info_div{
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #16B0F2;
+
+}
+.citie_info .info {
+    font-size: 1.8rem; /* Aumentado o tamanho da fonte para o restante das informações */
+    margin: 0.5rem 0;
+}
+
+.clima, .nuvens, .latitude, .longitude, .temp, .temp_max, .temp_min, .precao, .humidade, .vento{
+    padding-left: 2rem;
+    padding-top: 1rem;
 }
 
 .citie_map{

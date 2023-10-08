@@ -160,19 +160,19 @@ function transition(){
 
     /*country_info*/
 
-    document.querySelector('.country_info .nome').innerHTML = country_info.name;
-    document.querySelector('.country_info .sigla').innerHTML = country_info.cca2; 
-    document.querySelector('.country_info .nome_official').innerHTML = country_info.official_name; 
-    document.querySelector('.country_info .moeda').innerHTML = country_info.currency;
-    document.querySelector('.country_info .simbolo_moeda').innerHTML = country_info.currency_symbol;
-    document.querySelector('.country_info .capital').innerHTML = country_info.capital;
-    document.querySelector('.country_info .regiao').innerHTML = country_info.region;
-    document.querySelector('.country_info .lingua').innerHTML = country_info.languages;
-    document.querySelector('.country_info .latitude').innerHTML = country_info.lat;
-    document.querySelector('.country_info .longitude').innerHTML = country_info.lon;
-    document.querySelector('.country_info .fronteiras').innerHTML = country_info.borders;
-    document.querySelector('.country_info .area').innerHTML = country_info.area;
-    document.querySelector('.country_info .populacao').innerHTML = country_info.population;
+    document.querySelector('.country_info .nome') .innerHTML = country_info.name;
+    document.querySelector('.country_info .sigla').innerHTML = "Sigla: " + country_info.cca2; 
+    document.querySelector('.country_info .nome_official').innerHTML = "Nome oficial: " + country_info.official_name; 
+    document.querySelector('.country_info .moeda').innerHTML = "Moeda: " + country_info.currency;
+    document.querySelector('.country_info .simbolo_moeda').innerHTML = "Simbolo da moeda: "  + country_info.currency_symbol;
+    document.querySelector('.country_info .capital').innerHTML = "Capital: " + country_info.capital;
+    document.querySelector('.country_info .regiao').innerHTML = "Região: " + country_info.region;
+    document.querySelector('.country_info .lingua').innerHTML = "Língua: " + country_info.languages;
+    document.querySelector('.country_info .latitude').innerHTML = "Latitude: " + country_info.lat;
+    document.querySelector('.country_info .longitude').innerHTML = "Longitude: " + country_info.lon;
+    document.querySelector('.country_info .fronteiras').innerHTML = "Fronteiras: " + country_info.borders;
+    document.querySelector('.country_info .area').innerHTML = "Área territorial: " + country_info.area + " Km²";
+    document.querySelector('.country_info .populacao').innerHTML = "População: " + country_info.population + " de pessoas";
     document.querySelector('.country_info .bandeira').src = country_info.flag_link;
 }
 
