@@ -18,16 +18,18 @@ body {
 
 .information {
     display: none;
-    justify-content: space-evenly;
     width: 100vw;
 }
 
 .catch-citie {
-    display: flex;
+    display: block;
     padding: 3rem 2rem;
     border-radius: 1rem;
     box-shadow: 0 0 2rem var(--black);
     background-color: black;
+    color: var(--white);
+    justify-content: space-between;
+    align-items: center;
 }
 
 .catch-citie form {
@@ -120,26 +122,35 @@ body {
 .clima, .nuvens, .latitude, .longitude, .temp, .temp_max, .temp_min, .precao, .humidade, .vento, .sigla, .nome_official, .moeda, .simbolo_moeda, .capital, .regiao, .lingua, .fronteiras, .area, .populacao{
     padding-left: 2rem;
     padding-top: 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 .country_name_div {
     font-size: 2rem;
     border-bottom: 1px solid #ffffff; /* Adicionada uma linha divisória acima do nome da cidade */
     padding: 0%;
-    max-height: 10%;
     font-weight:700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    max-height: 10%;
+    padding: 2rem;
 }
 
 .bandeira {
     width: 50px; /* Defina a largura desejada */
     height: auto; /* Mantenha a proporção original da imagem */
+    margin-left: 1rem; /* Adicione margem à esquerda para separar a bandeira do nome */
 }
 
 
 .citie_map{
     background-color: #F8F9FA;
-    padding: 1rem;
+    padding: 0.2rem;
+    display: flex;
+    align-items: self-end;
+    
 }
 
 :root {

@@ -151,9 +151,9 @@ function transition(){
     document.querySelector('.citie_info .nuvens').innerHTML = "Nuvens: " + citie_info.clouds + "%";
     document.querySelector('.citie_info .latitude').innerHTML = "Latitude: " + citie_info.lat;
     document.querySelector('.citie_info .longitude').innerHTML = "Longitude: " + citie_info.lon;
-    document.querySelector('.citie_info .temp').innerHTML = "Temperatura: " + parseFloat((citie_info.temp - 273.15).toFixed(2));
-    document.querySelector('.citie_info .temp_max').innerHTML = "Temperatura Máxima: " + parseFloat((citie_info.temp_max - 273.15).toFixed(2));
-    document.querySelector('.citie_info .temp_min').innerHTML = "Temperatura Mínima: " + parseFloat((citie_info.temp_min - 273.15).toFixed(2));
+    document.querySelector('.citie_info .temp').innerHTML = "Temperatura: " + parseFloat((citie_info.temp - 273.15).toFixed(2)) + "°C";
+    document.querySelector('.citie_info .temp_max').innerHTML = "Temperatura Máxima: " + parseFloat((citie_info.temp_max - 273.15).toFixed(2)) + "°C";
+    document.querySelector('.citie_info .temp_min').innerHTML = "Temperatura Mínima: " + parseFloat((citie_info.temp_min - 273.15).toFixed(2)) + "°C";
     document.querySelector('.citie_info .precao').innerHTML = "Pressão: " + citie_info.pressure + " hpa";
     document.querySelector('.citie_info .humidade').innerHTML = "Umidade: " + citie_info.humidity + "%";
     document.querySelector('.citie_info .vento').innerHTML = "Vento: " + citie_info.wind + "m/s";
