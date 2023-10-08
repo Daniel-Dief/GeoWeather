@@ -78,7 +78,7 @@ body {
     box-shadow: 0 0 2rem var(--black);
     background-color: var(--black); 
     color: var(--white);
-    text-align: right;
+    text-align: left;
 }
 
 .citie_info{
