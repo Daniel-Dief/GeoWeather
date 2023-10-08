@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <script src="./scripts/get_citie.js" defer async></script>
+    <script src="./scripts/style_script.js" defer async></script>
     <title>GeoWeather</title>
 </head>
 
 <body>
     <div class="catch-citie">
-        <p> Digite o nome de uma cidade e eu te direi informações sobre ela</p>
+        <h2>Digite o nome de uma cidade e obtenha informações</h2>
         <form action="" method="">
-            <input type="text" id="citie_input" placeholder="Cidade..." name="citie">
-            <input type="submit">
+            <label for="citie_input"></label>
+            <input type="text" id="citie_input" placeholder="Exemplo: New York" name="citie">
+            <input type="submit" value="Buscar">
         </form>
     </div>
+
     <div class="information">
         <div class="citie_map"></div>
         <div class="citie_info">
@@ -37,7 +40,7 @@
         </div>
         <div class="country_info">
             <div class="country_name_div">
-                <p class="nome">nome</p>
+                <p class="nome"></p>
                 <img src="" class="bandeira" alt="Bandeira do pais alvo">
             </div>
             <p class="sigla">sigla</p>

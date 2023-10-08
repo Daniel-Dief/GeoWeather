@@ -13,23 +13,35 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--dark-blue);
+    background-color: #5e9aa4;
 }
 
 .information {
     display: none;
     width: 100vw;
+    overflow: hidden; 
+
 }
 
 .catch-citie {
     display: block;
-    padding: 3rem 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 2rem var(--black);
-    background-color: black;
-    color: var(--white);
-    justify-content: space-between;
-    align-items: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    background-color: #87dbeb;
+    color: #333;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.catch-citie:hover {
+    transform: scale(1.02);
+}
+
+.catch-citie h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
 }
 
 .catch-citie form {
@@ -39,38 +51,51 @@ body {
     justify-content: center;
 }
 
+
 .catch-citie label {
-    border-radius: 1rem;
-    border: 1px solid var(--light-blue);
-    color: var(--white);
-    font-size: .9rem;
-    padding: .5rem;
+    font-size: 1rem;
+    color: var(--light-blue);
+    margin-bottom: 0.5rem;
 }
 
-.catch-citie form input[type="text"] {
-    margin: 2rem;
-    width: 95%;
+
+.catch-citie input[type="text"] {
+    margin: 0.5rem;
+    width: 100%;
     height: 2rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
-    border-radius: 0.5rem;
-    background-color: var(--mid-blue);
-    border: 1px solid var(--mid-blue);
-    color: var(--white);
-    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease-in-out;
 }
 
 .catch-citie form input[type="text"]:focus {
     outline: none;
 }
 
-.catch-citie form input[type="submit"] {
-    border-radius: .5rem;
-    padding: .5rem;
-    border: 1px solid var(--dark-blue);
-    background-color: var(--dark-blue);
-    color: var(--white);
+.catch-citie input[type="text"]:focus {
+    outline: none;
+    border-color: #666;
+}
+
+.catch-citie input[type="submit"] {
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f9664c;
+    color: #fff;
+    font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.catch-citie input[type="submit"]:hover {
+    background-color: #f0b1a5;
+    color: #000;
 }
 
 .citie_info,
@@ -80,14 +105,23 @@ body {
     height: 100vh; 
     padding: 0%;
     box-shadow: 0 0 2rem var(--black);
-    background-color: var(--black); 
-    color: var(--white);
+    background-color: var(--sky-blue); 
+    color: var(--black);
     text-align: left;
 }
 
+.citie_info:hover,
+.country_info:hover,
+.citie_map:hover {
+    transform: scale(1.01);
+    transition: transform 500ms linear;
+}
+
+
+
 .citie_info{
-    background-color: var(--sky-blue);
-    color: #000;
+    background-color: var(--dark-blue);
+    color: var(--white);
 }
 
 .citie_info div {
@@ -100,7 +134,7 @@ body {
 
 .citie_name_div {
     font-size: 2rem;
-    border-bottom: 1px solid #000; /* Adicionada uma linha divisória acima do nome da cidade */
+    border-bottom: 1px solid #fff3f3; /* Adicionada uma linha divisória acima do nome da cidade */
     padding: 0%;
     max-height: 10%;
 
@@ -111,7 +145,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #16B0F2;
 
 }
 .citie_info .info {
@@ -127,7 +160,7 @@ body {
 
 .country_name_div {
     font-size: 2rem;
-    border-bottom: 1px solid #ffffff; /* Adicionada uma linha divisória acima do nome da cidade */
+    border-bottom: 1px solid #000000; /* Adicionada uma linha divisória acima do nome da cidade */
     padding: 0%;
     font-weight:700;
     display: flex;
@@ -162,6 +195,6 @@ body {
     --dark-cyan: #248173;
     --mid-blue: #145875;
     --light-blue: #13678A;
-    --dark-blue: #012030;
-    --sky-blue: #16B0F2
+    --dark-blue: #29545c;
+    --sky-blue: #c3edf5
 }
