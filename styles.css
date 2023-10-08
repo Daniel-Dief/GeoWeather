@@ -82,7 +82,7 @@ body {
 }
 
 .citie_info{
-    background-color: var(--cyan);
+    background-color: var(--sky-blue);
     color: #000;
 }
 
@@ -92,6 +92,10 @@ body {
     align-items: center;
 }
 
+.citie_map{
+    background-color: #F8F9FA;
+    padding: 1rem;
+}
 
 :root {
     --white: #FFFFFF;
@@ -103,4 +107,5 @@ body {
     --mid-blue: #145875;
     --light-blue: #13678A;
     --dark-blue: #012030;
+    --sky-blue: #16B0F2
 }
