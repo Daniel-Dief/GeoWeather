@@ -1,7 +1,12 @@
-body {
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'arial', sans-serif;
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,10 +49,11 @@ body {
     height: 2rem;
     font-size: 1.5rem;
     text-align: center;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: var(--mid-blue);
     border: 1px solid var(--mid-blue);
     color: var(--white);
+    margin-bottom: 1rem;
 }
 
 .catch-citie form input[type="text"]:focus {
@@ -63,13 +69,21 @@ body {
     cursor: pointer;
 }
 
-.citie_info, .country_info, .citie_map {
-    width: 25%;
+.citie_info,
+.country_info,
+.citie_map {
+    width: 100vw; 
+    height: 100vh; 
     padding: 2rem;
-    border-radius: 1rem;
     box-shadow: 0 0 2rem var(--black);
-    background-color: black;
-    color: white;
+    background-color: var(--black); 
+    color: var(--white);
+    text-align: right;
+}
+
+.citie_info{
+    background-color: var(--cyan);
+    color: #000;
 }
 
 .citie_info div {
@@ -77,6 +91,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 
 :root {
     --white: #FFFFFF;
