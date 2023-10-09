@@ -13,7 +13,21 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(to right bottom, #77cad8, #90ced9, #a6d2da, #bbd5da, #ced9db);}
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/fundo.jpg);
+    background-size: cover;
+    z-index: -1; 
+}
+
 
 .information {
     display: none;
@@ -27,7 +41,7 @@ body {
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-    background-color: #87dbeb;
+    background-color: #27464B;
     color: #333;
     text-align: center;
     transition: transform 0.3s ease-in-out;
@@ -40,7 +54,7 @@ body {
 .catch-citie h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #ffffff;
 }
 
 .catch-citie form {
@@ -65,7 +79,7 @@ body {
     font-size: 1rem;
     text-align: center;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    background-color: #dfdede;
     color: #333;
     padding: 0.5rem;
     border-radius: 0.25rem;
@@ -85,15 +99,15 @@ body {
     border-radius: 0.25rem;
     padding: 0.5rem 1rem;
     border: none;
-    background-color: #f9664c;
-    color: #fff;
+    background-color: #fff86a;
+    color: #000;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .catch-citie input[type="submit"]:hover {
-    background-color: #f0b1a5;
+    background-color: var(--sky-blue);
     color: #000;
 }
 
@@ -185,6 +199,74 @@ body {
     
 }
 
+
+.butao {
+    position: fixed;
+    bottom: 2%;
+    left: 85%;
+    font-size: 0.8rem;
+}
+
+.btn-back {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #ff6666;
+    color: white;
+    border: none;
+}
+
+.btn-back:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    background-color: #ff0000;
+}
+
+.btn-back:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-back::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+    background-color: #ff6666;
+}
+
+.btn-back:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
 :root {
     --white: #FFFFFF;
     --black: #000000;
@@ -194,6 +276,6 @@ body {
     --dark-cyan: #248173;
     --mid-blue: #145875;
     --light-blue: #13678A;
-    --dark-blue: #29545c;
-    --sky-blue: #c3edf5
+    --dark-blue: #27464B;
+    --sky-blue: #fffee5
 }
