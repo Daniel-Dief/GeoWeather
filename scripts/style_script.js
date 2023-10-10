@@ -14,14 +14,16 @@ btnBack.addEventListener('click', () => {
     document.querySelector('#citie_input').focus();
 });
 
-if(sessionStorage.log == null){
+if (sessionStorage.log == null) {
     modal.style.display = 'flex';
     document.querySelector('.dark-overlay').style.zIndex = 0;
     sessionStorage.log = true;
+    logo.style.display = 'none'; 
 }
 
 body.addEventListener('click', () => {
     modal.style.display = 'none';
     document.querySelector('.dark-overlay').style.zIndex = -1;
     document.querySelector('.catch-citie input').focus();
+    logo.style.display = 'block'; 
 });

@@ -47,6 +47,11 @@ body::before {
 
 }
 
+.modal.active + .logo {
+    display: none;
+}
+
+
 .catch-citie {
     display: flex;
     align-items: center;
