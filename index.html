@@ -11,15 +11,21 @@
     <title>GeoWeather</title>
 </head>
 
-<body>
+<body>    
+    <div class="dark-overlay"></div>
+
+    
+    <img src="./images/logo-transp-branca.png" alt="" id="logo">
+    
     <div class="catch-citie">
-        <h2>Digite o nome de uma cidade e obtenha informações</h2>
-        <form action="" method="">
-            <label for="citie_input"></label>
-            <input type="text" id="citie_input" placeholder="Exemplo: New York" name="citie">
-            <input type="submit" value="Buscar">
+        <form action="" method="" id="search-form">
+            <input type="text" id="citie_input" placeholder="Digite o nome de uma cidade..." name="citie">
+            <button type="submit"><img src="./images/lupa-logo.png" alt="Ícone de pesquisa"></button>
         </form>
     </div>
+    
+
+
 
     <div class="information">
         <div class="citie_map"></div>

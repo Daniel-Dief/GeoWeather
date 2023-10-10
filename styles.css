@@ -26,7 +26,17 @@ body::before {
     background-image: url(./images/fundo3.jpg);
     background-size: cover;
     z-index: -1; 
-    opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.86); /* Ajuste a cor de fundo e a opacidade conforme desejado */
+}
+
+.dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo escura com opacidade */
+    z-index: -1;
 }
 
 
@@ -37,80 +47,53 @@ body::before {
 
 }
 
+/* Adicione o estilo para a nova barra de pesquisa */
 .catch-citie {
-    display: block;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-    background-color: #27464B;
-    color: #333;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.catch-citie:hover {
-    transform: scale(1.02);
-}
-
-.catch-citie h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background-color: transparent; /* Remove o fundo de cor */
 }
 
 .catch-citie form {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    background-color: #fff; /* Fundo branco para a barra de pesquisa */
+    border-radius: 25px; /* Borda arredondada */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    width: 100%;
+    min-width: 350px; /* Largura máxima da barra de pesquisa */
+    padding: 8px 12px;
 }
-
-
-.catch-citie label {
-    font-size: 1rem;
-    color: var(--light-blue);
-    margin-bottom: 0.5rem;
-}
-
 
 .catch-citie input[type="text"] {
-    margin: 0.5rem;
-    width: 100%;
-    height: 2rem;
-    font-size: 1rem;
-    text-align: center;
-    border: 1px solid #ccc;
-    background-color: #dfdede;
-    color: #333;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    transition: border-color 0.3s ease-in-out;
-}
-
-.catch-citie form input[type="text"]:focus {
-    outline: none;
-}
-
-.catch-citie input[type="text"]:focus {
-    outline: none;
-    border-color: #666;
-}
-
-.catch-citie input[type="submit"] {
-    border-radius: 0.25rem;
-    padding: 0.5rem 1rem;
+    flex: 1; /* Expande o input para ocupar o espaço disponível */
     border: none;
-    background-color: #fff86a;
-    color: #000;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.2s;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px; /* Borda arredondada */
 }
 
-.catch-citie input[type="submit"]:hover {
-    background-color: var(--sky-blue);
-    color: #000;
+.catch-citie button {
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
+
+.catch-citie button img {
+    width: 24px;
+    height: 24px;
+}
+
+.catch-citie button:hover {
+    filter: brightness(0.8);
+}
+
+/* Adicione outras regras de estilo conforme necessário */
+
 
 .citie_info,
 .country_info,
