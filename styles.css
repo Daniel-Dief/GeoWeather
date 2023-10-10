@@ -181,7 +181,7 @@ body::before {
 .butao {
     position: fixed;
     bottom: 2%;
-    left: 85%;
+    left: 90%;
     font-size: 0.8rem;
 }
 
@@ -193,15 +193,24 @@ body::before {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s;
-    background-color: #ff6666;
-    color: white;
+    background-color: var(--black); /* Cor de fundo preta */
+    color: var(--white); /* Cor do texto branca */
     border: none;
+    display: flex;
+    align-items: center;
+}
+
+.btn-back img {
+    width: 25px; /* Tamanho da imagem (ajuste conforme necessário) */
+    height: 25px; /* Tamanho da imagem (ajuste conforme necessário) */
+    margin-left: 8px; /* Espaçamento entre o texto e a imagem (imagem à direita) */
 }
 
 .btn-back:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    background-color: #ff0000;
+    background-color: #000; /* Cor de fundo ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
 }
 
 .btn-back:active {
@@ -220,7 +229,7 @@ body::before {
     left: 0;
     z-index: -1;
     transition: all 0.4s;
-    background-color: #ff6666;
+    background-color: var(--black); /* Cor de fundo preta */
 }
 
 .btn-back:hover::after {
@@ -255,13 +264,55 @@ body::before {
     align-items: center;
     position: absolute;
     z-index: 1;
-    top: 10%;
-    background-color: var(--cyan);
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Corrige o posicionamento */
+    padding: 1rem 2rem 0.1rem 2rem; /* Espaçamento interno vertical maior */
+    max-width: 30%; 
+    background-color: #323437; /* Cor de fundo */
+    color: #fff; /* Cor dos textos */
+    border-radius: 10px;
+    min-height: auto;
+}
+
+.modal-title {
+    font-size: 1.8rem; /* Tamanho maior para o título */
+    text-align: center; /* Centraliza o título horizontalmente */
+}
+
+.modal-content p {
+    margin: 0.5rem 0; 
+    text-align: left; 
+    font-size: 0.8rem;
+}
+
+
+.modal-button {
+    background-color: #A8C7FA; /* Cor de fundo do botão */
+    color: #323437; /* Cor do texto do botão */
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    min-width: 100%; /* Define a largura máxima como 100% da div pai */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    display: inline-block; /* Permite ajustar o tamanho do botão com base no conteúdo */
+    font-size: 1rem; /* Tamanho da fonte do botão */
+    margin-top: 1rem; /* Espaçamento acima do botão */
+    margin-bottom: 1rem; /* Espaçamento abaixo do botão */
+    align-self: flex-end; /* Alinha o botão à parte inferior da div */
+    height: 40px; /* Altura do botão */
+}
+
+.modal-button:hover {
+    background-color: #84AEEB; /* Cor de fundo do botão ao passar o mouse */
 }
 
 .modal span {
     cursor: pointer;
 }
+
+
+
 
 @keyframes loading {
     0% {
@@ -294,3 +345,6 @@ body::before {
     --light-blue: #13678A;
 
 }
+
+/*sessionStorage.removeItem('log')
+*/
