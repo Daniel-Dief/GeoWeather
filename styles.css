@@ -26,7 +26,7 @@ body::before {
     background-image: url(./images/fundo3.jpg);
     background-size: cover;
     z-index: -1; 
-    background-color: rgba(0, 0, 0, 0.86); /* Ajuste a cor de fundo e a opacidade conforme desejado */
+    background-color: rgba(0, 0, 0, 0.86); 
 }
 
 .dark-overlay {
@@ -35,7 +35,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo escura com opacidade */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: -1;
 }
 
@@ -47,33 +47,32 @@ body::before {
 
 }
 
-/* Adicione o estilo para a nova barra de pesquisa */
 .catch-citie {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    background-color: transparent; /* Remove o fundo de cor */
+    background-color: transparent; 
 }
 
 .catch-citie form {
     display: flex;
     align-items: center;
-    background-color: #fff; /* Fundo branco para a barra de pesquisa */
-    border-radius: 25px; /* Borda arredondada */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    background-color: #fff; 
+    border-radius: 25px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
     width: 100%;
-    min-width: 350px; /* Largura máxima da barra de pesquisa */
+    min-width: 350px; 
     padding: 8px 12px;
 }
 
 .catch-citie input[type="text"] {
-    flex: 1; /* Expande o input para ocupar o espaço disponível */
+    flex: 1; 
     border: none;
     outline: none;
     padding: 10px;
     font-size: 16px;
-    border-radius: 25px; /* Borda arredondada */
+    border-radius: 25px; 
 }
 
 .catch-citie button {
@@ -92,7 +91,6 @@ body::before {
     filter: brightness(0.8);
 }
 
-/* Adicione outras regras de estilo conforme necessário */
 
 
 .citie_info,
