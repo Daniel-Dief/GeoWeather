@@ -244,9 +244,6 @@ body::before {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: var(--white);
     font-size: 1.5rem;
 }
