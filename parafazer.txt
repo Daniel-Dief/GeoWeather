@@ -1,0 +1,3 @@
+Ajustar tela de loading
+deixar o modal bonito
+quebra de linhas na fronteira
