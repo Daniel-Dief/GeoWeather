@@ -253,6 +253,14 @@ body::before {
 
 .modal {
     display: none;
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    background-color: var(--cyan);
+}
+
+.modal span {
+    cursor: pointer;
 }
 
 @keyframes loading {
