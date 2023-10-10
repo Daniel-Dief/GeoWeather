@@ -32,7 +32,6 @@ const country_info = {
     currency_symbol: "",
     borders: ""
 }
-input.focus();
 
 async function request_citie(citie_name) {
     json = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${citie_name}&appid=281ae3f9df1c5146067af84cfbd932a5&lang=pt_br`)
