@@ -255,6 +255,34 @@ body::before {
     animation-fill-mode: backwards;
 }
 
+.loading {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.loading img {
+    width: 10rem;
+    height: 10rem;
+    animation: loading 3s linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes moveInBottom {
     0% {
         opacity: 0;
@@ -265,7 +293,6 @@ body::before {
         transform: translateY(0px);
     }
 }
-
 
 :root {
     --white: #FFFFFF;

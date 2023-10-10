@@ -1,5 +1,6 @@
 const form = document.querySelector('.catch-citie form');
 const input = document.querySelector('#citie_input');
+var mensage = "";
 const citie_info = {
     name: "",
     lat: "",
@@ -53,7 +54,7 @@ async function request_citie(citie_name) {
                 citie_info.wind = null;
                 citie_info.clouds = null;
 
-                alert("Cidade não encontrada");
+                mensage = "Cidade não encontrada, procurando por país";
                 return null;
             }
         });
@@ -71,6 +72,8 @@ async function request_citie(citie_name) {
         citie_info.wind = json.wind.speed;
         citie_info.clouds = json.clouds.all;
         citie_info.country = json.sys.country;
+
+        mensage = "Coletando dados";
     }
 }
 
@@ -83,9 +86,9 @@ async function request_country(country_search, code) {
         .then(response => response.json());
     }
     if (json.status != 404) {
-        country_info.name = json[0].altSpellings[1];
+        country_info.name = json[0].name.common;
         country_info.cca2 = json[0].altSpellings[0];
-        country_info.official_name = json[0].altSpellings[2];
+        country_info.official_name = json[0].name.official;
         country_info.capital = json[0].capital[0];
         country_info.region = json[0].region;
         country_info.lat = json[0].latlng[0];
@@ -120,24 +123,41 @@ async function request_data_base(input) {
     const data = await fetch('./php/request.php', {
         method: 'POST',
         body: env_form
-    }).then(response => response.json());
+    }).then(response => response.json())
+    .catch(error => {
+        setTimeout(() => {
+            alert(`Cidade "${input}" não encontrada, tente novamente!`)
+            document.querySelector('.catch-citie').style.display = "block";
+            document.querySelector('#citie_input').value = "";
+            document.querySelector('.loading').style.display = "none";
+        }, 1500);
+    });
 
     country_info.name = data[0].country;
 }
 
 async function request(citie_name) {
     await request_citie(citie_name);
+    document.querySelector('.catch-citie').style.display = "none";
+    document.querySelector('.loading').style.display = "flex";
+    document.querySelector('.loading .mensage').innerHTML = mensage;
+    for (let i=1;i<=3; i++) {
+        setTimeout(() => {
+            document.querySelector('.loading .mensage').innerHTML += ".";
+        }, 500*i);
+    }
     if(json != null){
         await request_country(citie_info.country, true);
     } else {
-        await request_data_base(input.value)
+        await request_data_base(input.value);
         await request_country(country_info.name, false);
         await request_citie(country_info.capital);
     }
     setTimeout(() => {
+        document.querySelector('.loading').style.display = "none";
         create_map();
         transition();
-    }, 1000);
+    }, 2000);
 }
 
 function transition(){
@@ -177,11 +197,12 @@ function transition(){
     document.querySelector('.country_info .populacao').innerHTML = "População: " + country_info.population + " de pessoas";
     document.querySelector('.country_info .bandeira').src = country_info.flag_link;
 }
+
 function create_map(){
-    document.querySelector('.citie_map').innerHTML = `<iframe class="iframe_map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1760.9649263023773!2d${citie_info.lon}!3d${citie_info.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1696557851166!5m2!1spt-BR!2sbr"  width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>`;
+    document.querySelector('.citie_map').innerHTML = `<iframe class="iframe_map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d94191.64732381087!2d${citie_info.lon}!3d${citie_info.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1696557851166!5m2!1spt-BR!2sbr"  width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>`;
 }
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-    request(input.value);
+    request(input.value.trim());
 });
