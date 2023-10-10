@@ -100,7 +100,7 @@ body::before {
     height: 100vh; 
     padding: 0%;
     box-shadow: 0 0 2rem var(--black);
-    background-color: var(--sky-blue); 
+    background-color:#ffffffcb; 
     color: var(--black);
     text-align: left;
 }
@@ -115,7 +115,7 @@ body::before {
 
 
 .citie_info{
-    background-color: var(--dark-blue);
+    background-color: #00000098;
     color: var(--white);
 }
 
@@ -179,7 +179,6 @@ body::before {
     align-items: self-end;
     
 }
-
 
 .butao {
     position: fixed;
@@ -295,6 +294,5 @@ body::before {
     --dark-cyan: #248173;
     --mid-blue: #145875;
     --light-blue: #13678A;
-    --dark-blue: #27464B;
-    --sky-blue: #fffee5
+
 }
