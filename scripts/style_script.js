@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 const btnBack = document.querySelector('.btn-back');
 const information = document.querySelector('.information');
 const catchCitie = document.querySelector('.catch-citie');
@@ -15,9 +16,12 @@ btnBack.addEventListener('click', () => {
 
 if(sessionStorage.log == null){
     modal.style.display = 'flex';
+    document.querySelector('.dark-overlay').style.zIndex = 0;
     sessionStorage.log = true;
 }
 
-close.addEventListener('click', () => {
+body.addEventListener('click', () => {
     modal.style.display = 'none';
+    document.querySelector('.dark-overlay').style.zIndex = -1;
+    document.querySelector('.catch-citie input').focus();
 });
