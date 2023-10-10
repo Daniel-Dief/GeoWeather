@@ -105,6 +105,11 @@ body::before {
     text-align: left;
 }
 
+.country_info{
+    box-shadow: 0 0 2rem var(--white);
+
+}
+
 .citie_info:hover,
 .country_info:hover,
 .citie_map:hover {
@@ -174,10 +179,7 @@ body::before {
 
 
 .citie_map{
-    background-color: #F8F9FA;
-    display: flex;
-    align-items: self-end;
-    
+    display: flex;    
 }
 
 .butao {
