@@ -113,6 +113,18 @@ async function request_country(country_search, code) {
         country_info.status = 404;
         country_info.message = "Country not found";
     }
+
+    cont = 0;
+    old_borders = [];
+
+    country_info.borders.forEach(border => {
+        if(cont % 6 == 0 && cont != 0){
+            old_borders.push('<br>');
+        }
+        old_borders.push(border)
+        cont++;
+    });
+    country_info.borders = old_borders.join(', ').replaceAll('<br>,', '<br>');
 }
 
 async function request_data_base(input) {
