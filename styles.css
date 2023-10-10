@@ -99,15 +99,10 @@ body::before {
     width: 100vw; 
     height: 100vh; 
     padding: 0%;
-    box-shadow: 0 0 2rem var(--black);
-    background-color:#ffffffcb; 
+    box-shadow: 0 0 2rem var(--white);
+    background-color:#ffffffae; 
     color: var(--black);
     text-align: left;
-}
-
-.country_info{
-    box-shadow: 0 0 2rem var(--white);
-
 }
 
 .citie_info:hover,
@@ -122,6 +117,7 @@ body::before {
 .citie_info{
     background-color: #00000098;
     color: var(--white);
+    box-shadow: 0 0 2rem var(--black);
 }
 
 .citie_info div {
