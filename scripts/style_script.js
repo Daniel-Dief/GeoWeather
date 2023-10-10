@@ -17,6 +17,7 @@ if(sessionStorage.log == null){
     modal.style.display = 'flex';
     document.querySelector('#citie_input').disabled = true;
     document.querySelector('#search-form button').disabled = true;
+    document.querySelector('.dark-overlay').style.zIndex = 0;
     sessionStorage.log = true;
 }
 
@@ -24,4 +25,5 @@ close.addEventListener('click', () => {
     modal.style.display = 'none';
     document.querySelector('#citie_input').disabled = false;
     document.querySelector('#search-form button').disabled = false;
+    document.querySelector('.dark-overlay').style.zIndex = -1;
 });
