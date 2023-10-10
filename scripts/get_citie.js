@@ -137,6 +137,12 @@ async function request_data_base(input) {
 }
 
 async function request(citie_name) {
+    if(citie_name.toLowerCase().trim() == "garopaba"){
+        citie_name = "Imbituba";
+        ifgaropaba = true;
+    } else {
+        ifgaropaba = false;
+    }
     await request_citie(citie_name);
     document.querySelector('.catch-citie').style.display = "none";
     document.querySelector('.loading').style.display = "flex";
@@ -152,6 +158,11 @@ async function request(citie_name) {
         await request_data_base(input.value);
         await request_country(country_info.name, false);
         await request_citie(country_info.capital);
+    }
+    if(ifgaropaba){
+        citie_info.name = "Garopaba";
+        citie_info.lat = -28.0278;
+        citie_info.lon = -48.6192;
     }
     setTimeout(() => {
         document.querySelector('.loading').style.display = "none";
