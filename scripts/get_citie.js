@@ -163,6 +163,7 @@ async function request(citie_name) {
 function transition(){
     document.querySelector('.catch-citie').style.display = "none";
     document.querySelector('.information').style.display = "flex";
+    document.querySelector('#logo').style.display = "none";
     
     
 
