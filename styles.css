@@ -251,6 +251,10 @@ body::before {
     animation: loading 3s linear infinite;
 }
 
+.modal {
+    display: none;
+}
+
 @keyframes loading {
     0% {
         transform: rotate(0deg);
