@@ -351,5 +351,93 @@ body::before {
 
 }
 
-/*sessionStorage.removeItem('log')
-*/
+/* Responsividade para telas menores (dispositivos móveis) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 80%;
+    }
+
+    .catch-citie form {
+        min-width: auto;
+        max-width: 100%;
+    }
+
+    .catch-citie button img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-back {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .btn-back img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .modal {
+        max-width: 90%;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-content p {
+        font-size: 0.7rem;
+    }
+
+    .citie_map,
+    .citie_info,
+    .country_info,
+    .citie_name_div,
+    .citie_info_div,
+    .citie_info .info,
+    .country_name_div {
+        width: 100%;
+        height: auto;
+    }
+
+    .country_info{
+        font-size: 0.5rem;
+    }
+
+    .citie_map{
+        display: none;
+    }
+
+    .butao{
+        display: none;
+    }
+}
+
+/* Responsividade para telas ainda menores (dispositivos pequenos) */
+@media (max-width: 480px) {
+    .logo {
+        max-width: 80%;
+    }
+
+    .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .modal-content p {
+        font-size: 0.6rem;
+    }
+
+    .citie_map,
+    .citie_info,
+    .country_info,
+    .citie_name_div,
+    .citie_info_div,
+    .citie_info .info,
+    .country_name_div {
+        font-size: 1rem;
+    }
+}
