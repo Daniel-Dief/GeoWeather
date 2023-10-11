@@ -99,7 +99,7 @@ async function request_country(country_search, code) {
         if(json[0].borders){
             country_info.borders = json[0].borders;
         } else {
-            country_info.border = ['Não há.']
+            country_info.borders = ['Não há.']
         }
 
         /*get currency*/
@@ -121,7 +121,7 @@ async function request_country(country_search, code) {
     cont = 0;
     old_borders = [];
 
-    country_info.border.forEach(border => {
+    country_info.borders.forEach(border => {
         if(cont % 6 == 0 && cont != 0){
             old_borders.push('<br>');
         }
