@@ -104,7 +104,7 @@ body::before {
     width: 100vw; 
     height: 100vh; 
     padding: 0%;
-    box-shadow: 0 0 2rem var(--white);
+    box-shadow: 0 0 1rem var(--white);
     background-color:#ffffffae; 
     color: var(--black);
     text-align: left;
