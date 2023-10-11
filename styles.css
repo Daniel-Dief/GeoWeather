@@ -306,6 +306,7 @@ body::before {
     margin-bottom: 1rem;
     align-self: flex-end; 
     height: 40px; 
+    border: none;
 }
 
 .modal-button:hover {
