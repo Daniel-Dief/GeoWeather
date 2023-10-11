@@ -1,2 +1,1 @@
 Ajustar tela de loading
-deixar o modal bonito
