@@ -352,6 +352,7 @@ body::before {
 }
 
 /* Responsividade para telas menores (dispositivos móveis) */
+/* Responsividade para telas menores (dispositivos móveis) */
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -393,19 +394,19 @@ body::before {
         font-size: 0.7rem;
     }
 
+    /* Reorganize as divs de exibição de mapa, cidade e país para empilhá-las */
     .citie_map,
     .citie_info,
-    .country_info,
-    .citie_name_div,
-    .citie_info_div,
-    .citie_info .info,
-    .country_name_div {
+    .country_info {
         width: 100%;
         height: auto;
+        margin-bottom: 1rem; /* Adicione margem entre as divs para criar o empilhamento */
     }
 
+    
+
     .country_info{
-        font-size: 0.5rem;
+        display: none;
     }
 
     .citie_map{
@@ -417,27 +418,3 @@ body::before {
     }
 }
 
-/* Responsividade para telas ainda menores (dispositivos pequenos) */
-@media (max-width: 480px) {
-    .logo {
-        max-width: 80%;
-    }
-
-    .modal-title {
-        font-size: 1.2rem;
-    }
-
-    .modal-content p {
-        font-size: 0.6rem;
-    }
-
-    .citie_map,
-    .citie_info,
-    .country_info,
-    .citie_name_div,
-    .citie_info_div,
-    .citie_info .info,
-    .country_name_div {
-        font-size: 1rem;
-    }
-}
